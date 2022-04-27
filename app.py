@@ -17,4 +17,4 @@ class HealthCheckApi(Resource):
 api.add_resource(HealthCheckApi, '/health_check')
 
 if __name__ == '__main__':
-    app.run(port='5002')
+    app.run(port=5000)
