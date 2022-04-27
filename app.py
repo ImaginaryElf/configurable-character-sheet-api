@@ -16,5 +16,14 @@ class HealthCheckApi(Resource):
 
 api.add_resource(HealthCheckApi, '/health_check')
 
+
+class HomeApi(Resource):
+    @cross_origin()
+    def get(self):
+        return {'status': True}
+
+
+api.add_resource(HomeApi, '/')
+
 if __name__ == '__main__':
     app.run(port=5000)
