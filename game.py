@@ -7,11 +7,12 @@ from webargs.flaskparser import use_args
 from mongo_repository import create_game, update_game, get_game
 from mongo_repository import get_game_by_character, get_games_by_gm, get_games_by_player
 
+
 class GameApi(Resource):
     game_args = {
-        "game_id": fields.Str()
-        "character_id": fields.Str()
-        "player_id": fields.Str()
+        "game_id": fields.Str(),
+        "character_id": fields.Str(),
+        "player_id": fields.Str(),
         "gm_id": fields.Str()
     }
 
@@ -52,15 +53,10 @@ class GameApi(Resource):
 
         return {'status': False, 'error': 'You must provide at least one of character_id, player_id, game_id, or gm_id'}
 
-
-
     @cross_origin()
     def post(self):
         data = request.json
-        if data['name'] is not None and
-           data['schema'] is not None and
-           data['layout'] is not None and
-           data['gm_id'] is not None:
+        if data['name'] is not None and data['schema'] is not None and data['layout'] is not None and data['gm_id'] is not None:
             game_id = create_game(data)
             return {'status': True, 'data': game_id}
         else:
