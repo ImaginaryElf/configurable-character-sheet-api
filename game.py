@@ -7,7 +7,6 @@ from webargs.flaskparser import use_args
 from mongo_repository import create_game, update_game, get_game
 from mongo_repository import get_game_by_character, get_games_by_gm, get_games_by_player
 
-
 class GameApi(Resource):
     game_args = {
         "game_id": fields.Str()
@@ -58,8 +57,14 @@ class GameApi(Resource):
     @cross_origin()
     def post(self):
         data = request.json
-        game_id = create_game(data)
-        return {'status': True, 'data': game_id}
+        if data['name'] is not None and
+           data['schema'] is not None and
+           data['layout'] is not None and
+           data['gm_id'] is not None:
+            game_id = create_game(data)
+            return {'status': True, 'data': game_id}
+        else:
+            return {'status': False, 'error': 'Game must contain name, schema, layout, and gm_id'}
 
     @cross_origin()
     def put(self):
