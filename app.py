@@ -7,6 +7,8 @@ from flask_restful import Resource, Api
 
 from flask_cors import CORS, cross_origin
 from game import GameApi
+from player import PlayerApi
+from character import CharacterApi
 
 AUTH0_DOMAIN = "https://dev-ukt61qwl.eu.auth0.com/"
 API_AUDIENCE = "https://configurable-sheet-api-prod.herokuapp.com/"
@@ -142,6 +144,8 @@ class HomeApi(Resource):
 api.add_resource(HealthCheckApi, '/health_check')
 api.add_resource(HomeApi, '/')
 api.add_resource(GameApi, '/game')
+api.add_resource(PlayerApi, '/player')
+api.add_resource(CharacterApi, '/character')
 
 if __name__ == '__main__':
     app.run(port=5000)
