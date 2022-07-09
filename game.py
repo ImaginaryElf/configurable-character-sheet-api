@@ -16,11 +16,11 @@ class Game:
         self.json = data
 
     def validate(self):
-        if self.json['name'] is not None and
-           self.json['schema'] is not None and
-           self.validate_schema() and
-           self.json['layout'] is not None and
-           self.validate_layout() and
+        if self.json['name'] is not None and \
+           self.json['schema'] is not None and \
+           self.validate_schema() and \
+           self.json['layout'] is not None and \
+           self.validate_layout() and \
            self.json['gm_id'] is not None:
            return True
         return False
@@ -43,9 +43,9 @@ class Game:
 
 class GameApi(Resource):
     game_args = {
-        "game_id": fields.Str()
-        "character_id": fields.Str()
-        "player_id": fields.Str()
+        "game_id": fields.Str(),
+        "character_id": fields.Str(),
+        "player_id": fields.Str(),
         "gm_id": fields.Str()
     }
 

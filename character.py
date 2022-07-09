@@ -5,13 +5,13 @@ from webargs import fields
 from webargs.flaskparser import use_args
 from uuid import uuid4
 
-from mongo_repository import get_games_by_character, get_game, update_game
+from mongo_repository import get_game_by_character, get_game, update_game
 
 
 class CharacterApi(Resource):
     character_args = {
-        "character_id": fields.Str()
-        "player_id": fields.Str()
+        "character_id": fields.Str(),
+        "player_id": fields.Str(),
         "game_id": fields.Str()
     }
 
@@ -20,7 +20,7 @@ class CharacterApi(Resource):
     def get(self, args):
         characters = []
         if args['character_id'] is not None:
-            game = get_games_by_character(args['character_id'])
+            game = get_game_by_character(args['character_id'])
             if game is not None:
                 for player in game['players']:
                     for character in game['characters']:
@@ -45,7 +45,7 @@ class CharacterApi(Resource):
             return {'status': False, 'error': 'Could not find game with _id=' + args['game_id']}
 
         if args['player_id'] is not None:
-            games = get_games_by_player(args['player_id'])
+            games = get_game_by_character(args['player_id'])
             for game in games:
                 for player in game['players']:
                     if player['player_id'] == args['player_id']:
