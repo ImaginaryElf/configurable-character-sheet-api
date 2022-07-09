@@ -12,18 +12,19 @@ from mongo_repository import get_game_by_character, get_games_by_gm, get_games_b
 schema_definition = None
 layout_definition = None
 
+
 class Game:
     def __init__(self, data):
         self.json = data
 
     def validate(self):
         if self.json['name'] is not None and \
-           self.json['schema'] is not None and \
-           self.validate_schema() and \
-           self.json['layout'] is not None and \
-           self.validate_layout() and \
-           self.json['gm_id'] is not None:
-           return True
+                self.json['schema'] is not None and \
+                self.validate_schema() and \
+                self.json['layout'] is not None and \
+                self.validate_layout() and \
+                self.json['gm_id'] is not None:
+            return True
         return False
 
     def validate_character(self, character):
