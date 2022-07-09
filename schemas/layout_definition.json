@@ -1,0 +1,57 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/layout.schema.json",
+    "title": "Character",
+    "description": "A character from Soulbound",
+    "type": "object",
+    
+    "$defs": {
+        "control": {
+            "type": "object",
+            "properties": {
+                "type": { "type": "string", "enum": ["nullInput", "numericInput", "textInput", "tableInput", "boolInput", "listInput"] },
+                "dataField": { "type": "string" },
+                "label": { "type": "string" },
+                "tableHeadings": { "type": "array", "items": {"type": "string"} },
+                "tableMappings": { "type": "object" }
+            },
+            "required": ["type"]
+        },
+        "horizontalSpacer": {
+            "type": "object",
+            "properties": {
+                "width": { "type": "integer" },
+                "rows": { "type": "array", "items": { "$ref": "#/$defs/verticalSpacer" } },
+                "control": { "$ref": "#/$defs/control" }
+            }
+        },
+        "verticalSpacer": {
+            "type": "object",
+            "properties": {
+                "height": { "type": "integer" },
+                "columns": { "type": "array", "items": { "$ref": "#/$defs/horizontalSpacer" } },
+                "control": { "$ref": "#/$defs/control" }
+            }
+        },
+        "tab": {
+            "type": "object",
+            "properties": {
+                "title": { "type": "string" },
+                "layout": {
+                    "type": "object",
+                    "properties": {
+                        "rows": { "type": "array", "items": { "$ref": "#/$defs/verticalSpacer" } }
+                    },
+                    "required": ["rows"]
+                }    
+            },
+            "required": ["title", "layout"]
+        }
+    },
+    
+    "properties": {
+        "name": { "type": "string" },
+        "tabs": { "type": "array", "items": { "$ref": "#/$defs/tab" } }
+    },
+    "required": [ "name", "tabs" ]
+}

@@ -10,6 +10,7 @@ from mongo_repository import create_game, update_game, get_game
 from mongo_repository import get_game_by_character, get_games_by_gm, get_games_by_player
 
 schema_definition = None
+layout_definition = None
 
 class Game:
     def __init__(self, data):
@@ -29,7 +30,7 @@ class Game:
         validate(instance=character, schema=self.json['schema'])
 
     def validate_layout(self):
-        return True
+        validate(instance=self.json['layout'], schema=self.layout_definition())
 
     def validate_schema(self):
         validate(instance=self.json['schema'], schema=self.schema_definition())
@@ -40,6 +41,13 @@ class Game:
             with open("schemas/schema_definition.json") as f:
                 schema_definition = json.load(f)
         return schema_definition
+
+    def layout_definition(self):
+        global layout_definition
+        if layout_definition is None:
+            with open("schemas/layout_definition.json") as f:
+                layout_definition = json.load(f)
+        return layout_definition
 
 class GameApi(Resource):
     game_args = {
