@@ -1,15 +1,17 @@
+import json
+
+from bson import json_util
 from pymongo import MongoClient
 from pymongo.server_api import ServerApi
 
 conn_str = "mongodb+srv://admin:BZiJZjt6Fhqt9Isq@project-cluster.9imd1.mongodb.net/?retryWrites=true&w=majority"
 client = MongoClient(conn_str, serverSelectionTimeoutMS=5000, server_api=ServerApi('1'))
 gameCollection = client["public"]["game"]
-userDb = client["public"]["user"]
 
 
 def create_game(game):
     result = gameCollection.insert_one(game)
-    return result.inserted_id
+    return json.loads(json_util.dumps(result.inserted_id))
 
 
 def update_game(game):
