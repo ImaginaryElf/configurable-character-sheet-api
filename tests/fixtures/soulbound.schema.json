@@ -1,0 +1,170 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/soulbound.schema.json",
+    "title": "Layout",
+    "description": "A layout for use in configurableCharacterSheet app",
+    "type": "object",
+
+    "$defs": {
+        "skill": {
+            "type": "object",
+            "properties": {
+                "training": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 3
+                },
+                "focus": { 
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 3
+                }
+            },
+        "required": ["training", "focus"]
+        },
+        "variableNaturalValue": {
+            "type": "object",
+            "properties": {
+                "current": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "mutable": true
+                },
+                "max": { 
+                    "type": "integer",
+                    "minimum": 1
+                }
+            },
+            "required": ["current", "max"]
+        },
+        "attack": {
+            "type": "object",
+            "properties": {
+                "name": { "type": "string" },
+                "range": { "type": "string" },
+                "pool": { "type": "integer", "minimum": 1 },
+                "focus": { "type": "integer", "minimum": 0 },
+                "damage": { "type": "string" },
+                "traits": { "type": "array", "items": { "type": "string" } }
+            },
+            "required": ["name", "range", "pool", "focus", "damage", "traits"]
+        },
+        "magic": {
+            "type": "object",
+            "properties": {
+                "name": { "type": "string" },
+                "dnOrCost": { "type": "string" },
+                "target": { "type": "string" },
+                "range": { "type": "string" },
+                "duration": { "type": "string" },
+                "effects": { "type": "string" }
+            },
+            "required": ["name", "dnOrCost", "target", "range", "duration", "effects"]
+        }
+    },
+
+    "properties": {
+        "characterName": { "type": "string" },
+        "archetype": { "type": "string" },
+        "species": { "type": "string" },
+        "attributes": {
+            "type": "object",
+            "properties": {
+                "mind": { "type": "integer", "minimum": 1 },
+                "body": { "type": "integer", "minimum": 1  },
+                "soul": { "type": "integer", "minimum": 1 }
+            },
+            "required": ["mind", "body", "soul"]
+        },
+        "skills": {
+            "type": "object",
+            "properties": {
+                "arcana": { "$ref": "#/$defs/skill" },
+                "athletics": { "$ref": "#/$defs/skill" },
+                "awareness": { "$ref": "#/$defs/skill" },
+                "ballisticSkill": { "$ref": "#/$defs/skill" },
+                "beastHandling": { "$ref": "#/$defs/skill" },
+                "channelling": { "$ref": "#/$defs/skill" },
+                "crafting": { "$ref": "#/$defs/skill" },
+                "determination": { "$ref": "#/$defs/skill" },
+                "devotion": { "$ref": "#/$defs/skill" },
+                "dexterity": { "$ref": "#/$defs/skill" },
+                "entertain": { "$ref": "#/$defs/skill" },
+                "fortitude": { "$ref": "#/$defs/skill" },
+                "guile": { "$ref": "#/$defs/skill" },
+                "intimidation": { "$ref": "#/$defs/skill" },
+                "intuition": { "$ref": "#/$defs/skill" },
+                "lore": { "$ref": "#/$defs/skill" },
+                "medicine": { "$ref": "#/$defs/skill" },
+                "might": { "$ref": "#/$defs/skill" },
+                "nature": { "$ref": "#/$defs/skill" },
+                "reflexes": { "$ref": "#/$defs/skill" },
+                "stealth": { "$ref": "#/$defs/skill" },
+                "survival": { "$ref": "#/$defs/skill" },
+                "theology": { "$ref": "#/$defs/skill" },
+                "weaponSkill": { "$ref": "#/$defs/skill" }
+            },
+            "required": [
+                "arcana",
+                "athletics",
+                "awareness",
+                "ballisticSkill",
+                "beastHandling",
+                "channelling",
+                "crafting",
+                "determination",
+                "devotion",
+                "dexterity",
+                "entertain",
+                "fortitude",
+                "guile",
+                "intimidation",
+                "intuition",
+                "lore",
+                "medicine",
+                "might",
+                "nature",
+                "reflexes",
+                "stealth",
+                "survival",
+                "theology",
+                "weaponSkill"]
+        },
+        "naturalAwareness": { "type": "integer", "minimum": 0 },
+        "connections": { "type": "string" },
+        "talents": { "type": "array", "items": { "type": "string" } },
+        "goals": { "type": "string" },
+        "melee": { "type": "integer" },
+        "accuracy": { "type": "integer" },
+        "defense": { "type": "integer" },
+        "initiative": { "type": "integer" },
+        "mettle": { "$ref": "#/$defs/variableNaturalValue" },
+        "armour": { "type": "integer" },
+        "toughness": { "$ref": "#/$defs/variableNaturalValue" },
+        "attacks": { "type": "array", "items": { "$ref": "#/$defs/attack" } },
+        "equipment": { "type": "array", "items": { "type": "string" } , "mutable": true },
+        "currency": {
+            "type": "object",
+            "properties": {
+                "drops": { "type": "integer", "minimum": 0, "mutable": true },
+                "phials": { "type": "integer", "minimum": 0, "mutable": true},
+                "spheres": { "type": "integer", "minimum": 0, "mutable": true }
+            },
+            "required": ["drops", "phials", "spheres"]
+        },
+        "magics": { "type": "array", "items": { "$ref": "#/$defs/magic" } },
+        "wounds": {
+            "type": "object",
+            "properties": {
+                "current": { "type": "array", "items": { "type": "string" }, "mutable": true },
+                "max": { "type": "integer", "minimum": 1 },
+                "mortallyWounded": { "type": "boolean" }
+            },
+            "required": [ "current", "max", "mortallyWounded" ]
+        }
+    },
+    "required": [ "characterName", "archetype", "species", "attributes", "skills",
+        "naturalAwareness", "connections", "talents", "goals", "melee", "accuracy",
+        "defense", "initiative", "mettle", "armour", "toughness", "attacks", "equipment",
+        "currency", "magics", "wounds" ]
+}
