@@ -75,7 +75,6 @@ class GameApi(Resource):
     @use_args(game_args, location="query")
     def get(self, args):
         games = []
-        print(args)
         if 'game_id' in args:
             game = get_game(args['game_id'])
             if game is not None:
@@ -121,7 +120,7 @@ class GameApi(Resource):
     @cross_origin()
     def put(self):
         data = request.json
-        game = get_game(data['id'])
+        game = get_game(data['_id'])
         if game is None:
             return {'status': False, 'error': 'Game not found'}
         game['name'] = data['name']
