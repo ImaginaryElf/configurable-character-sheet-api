@@ -1,6 +1,6 @@
 import json
 
-from bson import json_util
+from bson import json_util, ObjectId
 from pymongo import MongoClient
 from pymongo.server_api import ServerApi
 
@@ -15,12 +15,12 @@ def create_game(game):
 
 
 def update_game(game):
-    result = gameCollection.replace_one({'_id': game['_id']}, game)
+    result = gameCollection.replace_one({'_id': ObjectId(game['_id'])}, game)
     return json.loads(json_util.dumps(result.acknowledged))
 
 
 def get_game(game_id):
-    result = gameCollection.find_one({'_id': game_id})
+    result = gameCollection.find_one({'_id': ObjectId(game_id)})
     return json.loads(json_util.dumps(result))
 
 

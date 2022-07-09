@@ -16,7 +16,7 @@ class CharacterApi(Resource):
     }
 
     @cross_origin()
-    @use_args(character_args)
+    @use_args(character_args, location="query")
     def get(self, args):
         characters = []
         if 'character_id' in args:
