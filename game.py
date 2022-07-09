@@ -27,13 +27,25 @@ class Game:
         return False
 
     def validate_character(self, character):
-        validate(instance=character, schema=self.json['schema'])
+        try:
+            validate(instance=character, schema=self.json['schema'])
+            return True
+        except:
+            return False
 
     def validate_layout(self):
-        validate(instance=self.json['layout'], schema=self.layout_definition())
+        try:
+            validate(instance=self.json['layout'], schema=self.layout_definition())
+            return True
+        except:
+            return False
 
     def validate_schema(self):
-        validate(instance=self.json['schema'], schema=self.schema_definition())
+        try:
+            validate(instance=self.json['schema'], schema=self.schema_definition())
+            return True
+        except:
+            return False
 
     def schema_definition(self):
         global schema_definition
@@ -48,6 +60,7 @@ class Game:
             with open("schemas/layout_definition.json") as f:
                 layout_definition = json.load(f)
         return layout_definition
+
 
 class GameApi(Resource):
     game_args = {
