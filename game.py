@@ -75,23 +75,23 @@ class GameApi(Resource):
     @use_args(game_args)
     def get(self, args):
         games = []
-        if args['game_id'] is not None:
+        if 'game_id' in args:
             game = get_game(args['id'])
             if game is not None:
                 games.append(game)
                 return {'status': True, 'data': games}
             else:
-                return {'status': False, 'error': 'Game not found'}
+                return {'status': False, 'error': 'Game (game_id) not found'}
 
-        if args['character_id'] is not None:
+        if 'character_id' in args:
             game = get_game_by_character(args['character_id'])
             if game is not None:
                 games.append(game)
                 return {'status': True, 'data': games}
             else:
-                return {'status': False, 'error': 'Game not found'}
+                return {'status': False, 'error': 'Game (character_id) not found'}
 
-        if args['gm_id'] is not None:
+        if 'gm_id' in args:
             potential_games = get_games_by_gm(args['gm_id'])
             for game in potential_games:
                 if args['player_id'] is None:
@@ -102,7 +102,7 @@ class GameApi(Resource):
                             games.append(game)
             return {'status': True, 'data': games}
 
-        if args['player_id'] is not None:
+        if 'player_id' in args:
             games = get_games_by_player(args['player_id'])
             return {'status': True, 'data': games}
 

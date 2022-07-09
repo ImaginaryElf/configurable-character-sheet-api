@@ -19,7 +19,7 @@ class CharacterApi(Resource):
     @use_args(character_args)
     def get(self, args):
         characters = []
-        if args['character_id'] is not None:
+        if 'character_id' in args:
             game = get_game_by_character(args['character_id'])
             if game is not None:
                 for player in game['players']:
@@ -29,22 +29,22 @@ class CharacterApi(Resource):
                             return {'status': True, 'data': characters}
             return {'status': False, 'error': 'Could not find character_id=' + args['character_id']}
 
-        if args['game_id'] is not None:
+        if 'game_id' in args:
             game = get_game(args['game_id'])
             if game is not None:
                 if args['player_id'] is not None:
                     for player in game['players']:
                         if player['player_id'] == args['player_id']:
                             return {'status': True, 'data': player['characters']}
-                    return {'status': False, 'error': 'Game with _id=' + args['game_id'] + \
-                        " contained not player with player_id=" + args['player_id']}
+                    return {'status': False, 'error': 'Game with _id=' + args['game_id'] +
+                                                      " contained not player with player_id=" + args['player_id']}
                 else:
                     for player in game['players']:
                         characters.extend(player['characters'])
                     return {'status': True, 'data': characters}
             return {'status': False, 'error': 'Could not find game with _id=' + args['game_id']}
 
-        if args['player_id'] is not None:
+        if 'player_id' in args:
             games = get_game_by_character(args['player_id'])
             for game in games:
                 for player in game['players']:
