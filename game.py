@@ -72,7 +72,7 @@ class GameApi(Resource):
     }
 
     @cross_origin()
-    @use_args(game_args)
+    @use_args(game_args, location="query")
     def get(self, args):
         games = []
         print(args)
