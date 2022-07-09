@@ -3,9 +3,43 @@ from flask_cors import cross_origin
 from flask_restful import Resource
 from webargs import fields
 from webargs.flaskparser import use_args
+from jsonschema import validate
+import json
 
 from mongo_repository import create_game, update_game, get_game
 from mongo_repository import get_game_by_character, get_games_by_gm, get_games_by_player
+
+schema_definition = None
+
+class Game:
+    def __init__(self, data):
+        self.json = data
+
+    def validate(self):
+        if self.json['name'] is not None and
+           self.json['schema'] is not None and
+           self.validate_schema() and
+           self.json['layout'] is not None and
+           self.validate_layout() and
+           self.json['gm_id'] is not None:
+           return True
+        return False
+
+    def validate_character(self, character):
+        validate(instance=character, schema=self.json['schema'])
+
+    def validate_layout(self):
+        return True
+
+    def validate_schema(self):
+        validate(instance=self.json['schema'], schema=self.schema_definition())
+
+    def schema_definition(self):
+        global schema_definition
+        if schema_definition is None:
+            with open("schemas/schema_definition.json") as f:
+                schema_definition = json.load(f)
+        return schema_definition
 
 class GameApi(Resource):
     game_args = {
@@ -52,19 +86,14 @@ class GameApi(Resource):
 
         return {'status': False, 'error': 'You must provide at least one of character_id, player_id, game_id, or gm_id'}
 
-
-
     @cross_origin()
     def post(self):
-        data = request.json
-        if data['name'] is not None and
-           data['schema'] is not None and
-           data['layout'] is not None and
-           data['gm_id'] is not None:
-            game_id = create_game(data)
+        game = Game(request.json)
+        if game.validate():
+            game_id = create_game(game.json)
             return {'status': True, 'data': game_id}
         else:
-            return {'status': False, 'error': 'Game must contain name, schema, layout, and gm_id'}
+            return {'status': False, 'error': 'Game data provided was invalid'}
 
     @cross_origin()
     def put(self):
