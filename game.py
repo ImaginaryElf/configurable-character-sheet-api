@@ -75,8 +75,9 @@ class GameApi(Resource):
     @use_args(game_args)
     def get(self, args):
         games = []
+        print(args)
         if 'game_id' in args:
-            game = get_game(args['id'])
+            game = get_game(args['game_id'])
             if game is not None:
                 games.append(game)
                 return {'status': True, 'data': games}
