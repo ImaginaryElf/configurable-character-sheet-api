@@ -1,0 +1,74 @@
+{
+    "characterName": "Geralt",
+    "archetype": "witcher",
+    "species": "mostly human",
+    "attributes": {
+        "mind": 3,
+        "body": 3,
+        "soul": 3
+    },
+    "skills": {
+        "arcana": { "focus": 0, "training": 0 },
+        "athletics": { "focus": 0, "training": 0 },
+        "awareness": { "focus": 0, "training": 0 },
+        "ballisticSkill": { "focus": 0, "training": 0 },
+        "beastHandling": { "focus": 0, "training": 0 },
+        "channelling": { "focus": 0, "training": 0 },
+        "crafting": { "focus": 0, "training": 0 },
+        "determination": { "focus": 0, "training": 0 },
+        "devotion": { "focus": 0, "training": 0 },
+        "dexterity": { "focus": 0, "training": 0 },
+        "entertain": { "focus": 0, "training": 0 },
+        "fortitude": { "focus": 0, "training": 0 },
+        "guile": { "focus": 0, "training": 0 },
+        "intimidation": { "focus": 0, "training": 0 },
+        "intuition": { "focus": 0, "training": 0 },
+        "lore": { "focus": 0, "training": 0 },
+        "medicine": { "focus": 0, "training": 0 },
+        "might": { "focus": 0, "training": 0 },
+        "nature": { "focus": 0, "training": 0 },
+        "reflexes": { "focus": 0, "training": 0 },
+        "stealth": { "focus": 0, "training": 0 },
+        "survival": { "focus": 0, "training": 0 },
+        "theology": { "focus": 0, "training": 0 },
+        "weaponSkill": { "focus": 0, "training": 0 }
+    },
+    "naturalAwareness": 2,
+    "connections": "That stupid bard person",
+    "talents": [ "massive druggy", "stabby boi", "saying hmmmmmmmm" ],
+    "goals": "Help Ciri become mega super wizard witcher thing",
+    "melee": 6,
+    "accuracy": 3,
+    "defense": 4,
+    "initiative": 6,
+    "mettle": { "current": 2, "max": 2 },
+    "armour": 2,
+    "toughness": { "current": 5, "max": 10 },
+    "wounds": { "current": [ "", "", "", "", ""], "max": 5, "mortallyWounded": false },
+    "attacks": [
+        { 
+            "name": "stabby sword",
+            "range": "close",
+            "pool": 10,
+            "focus": 3,
+            "damage": "2+S",
+            "traits": [ "Piercing", "Penetrating" ]
+        }
+    ],
+    "equipment": [ "stabby sword", "silver sword", "Roach" ],
+    "currency": {
+        "drops": 1,
+        "phials": 7,
+        "spheres": 11
+    },
+    "magics": [
+        {
+            "name": "sign of explodeyness",
+            "dnOrCost": "1 mettle",
+            "target": "zone",
+            "range": "short",
+            "duration": "instant",
+            "effects": "bang"
+        }
+    ]
+}
