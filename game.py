@@ -3,7 +3,7 @@ from flask_cors import cross_origin
 from flask_restful import Resource
 from webargs import fields
 from webargs.flaskparser import use_args
-from jsonschema import validate
+from jsonschema import validate, exceptions
 import json
 
 from mongo_repository import create_game, update_game, get_game
@@ -30,21 +30,21 @@ class Game:
         try:
             validate(instance=character, schema=self.json['schema'])
             return True
-        except:
+        except exceptions.ValidationError:
             return False
 
     def validate_layout(self):
         try:
             validate(instance=self.json['layout'], schema=self.layout_definition())
             return True
-        except:
+        except exceptions.ValidationError:
             return False
 
     def validate_schema(self):
         try:
             validate(instance=self.json['schema'], schema=self.schema_definition())
             return True
-        except:
+        except exceptions.ValidationError:
             return False
 
     def schema_definition(self):
