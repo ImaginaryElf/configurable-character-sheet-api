@@ -16,26 +16,28 @@ def create_game(game):
 
 def update_game(game):
     result = gameCollection.replace_one({'_id': game['_id']}, game)
-    return result.acknowledged
+    return json.loads(json_util.dumps(result.acknowledged))
 
 
 def get_game(game_id):
     result = gameCollection.find_one({'_id': game_id})
-    return result
+    return json.loads(json_util.dumps(result))
 
 
 def get_games_by_player(player_id):
     # player in players where player._id == player_id
-    return gameCollection.find({'players': {"$elemMatch": {"player_id": player_id}}})
+    result = gameCollection.find({'players': {"$elemMatch": {"player_id": player_id}}})
+    return json.loads(json_util.dumps(result))
 
 
 def get_games_by_gm(gm_id):
-    return gameCollection.find({'gm_id': gm_id})
+    result = gameCollection.find({'gm_id': gm_id})
+    return json.loads(json_util.dumps(result))
 
 
 def get_game_by_character(character_id):
     # player in players where player._id == player_id
-    return gameCollection.find_one(
+    result = gameCollection.find_one(
         {'players':
              {"$elemMatch":
                   {"characters":
@@ -45,3 +47,4 @@ def get_game_by_character(character_id):
                    }
               }
          })
+    return json.loads(json_util.dumps(result))
