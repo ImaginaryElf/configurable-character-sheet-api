@@ -92,21 +92,18 @@ class GameApi(Resource):
                 return {'status': False, 'error': 'Game (character_id) not found'}
 
         if 'gm_id' in args:
-            potential_games = get_games_by_gm(args['gm_id'])
-            for game in potential_games:
-                if args['player_id'] is None:
-                    games.append(game)
-                else:
-                    for player in game['players']:
-                        if player['player_id'] == args['player_id']:
-                            games.append(game)
-            return {'status': True, 'data': games}
+            games = get_games_by_gm(args['gm_id'])
+            games.append(games)
 
         if 'player_id' in args:
             games = get_games_by_player(args['player_id'])
-            return {'status': True, 'data': games}
+            games.append(games)
 
-        return {'status': False, 'error': 'You must provide at least one of character_id, player_id, game_id, or gm_id'}
+        if len(games) > 0:
+            return {'status': True, 'data': games}
+        else:
+            return {'status': False, 'error': 'You must provide at least one of character_id, player_id, game_id, '
+                                              'or gm_id'}
 
     @cross_origin()
     def post(self):
