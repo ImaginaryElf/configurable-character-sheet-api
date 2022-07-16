@@ -92,12 +92,12 @@ class GameApi(Resource):
                 return {'status': False, 'error': 'Game (character_id) not found'}
 
         if 'gm_id' in args:
-            games = get_games_by_gm(args['gm_id'])
-            games.append(games)
+            db_reply = get_games_by_gm(args['gm_id'])
+            games.append(db_reply)
 
         if 'player_id' in args:
-            games = get_games_by_player(args['player_id'])
-            games.append(games)
+            db_reply = get_games_by_player(args['player_id'])
+            games.append(db_reply)
 
         if len(games) > 0:
             return {'status': True, 'data': games}
