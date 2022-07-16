@@ -26,7 +26,7 @@ def get_game(game_id):
 
 def get_games_by_player(player_id):
     # player in players where player._id == player_id
-    result = gameCollection.find({'players': {"$elemMatch": {"player_id": player_id}}})
+    result = gameCollection.find({'players': {"$elemMatch": {"id": player_id}}})
     return json.loads(json_util.dumps(result))
 
 
@@ -42,7 +42,7 @@ def get_game_by_character(character_id):
              {"$elemMatch":
                   {"characters":
                        {"$elemMatch":
-                            {"character_id": character_id}
+                            {"id": character_id}
                         }
                    }
               }
