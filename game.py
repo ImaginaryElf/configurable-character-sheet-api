@@ -93,11 +93,11 @@ class GameApi(Resource):
 
         if 'gm_id' in args:
             db_reply = get_games_by_gm(args['gm_id'])
-            games.append(db_reply)
+            games += db_reply
 
         if 'player_id' in args:
             db_reply = get_games_by_player(args['player_id'])
-            games.append(db_reply)
+            games += db_reply
 
         if len(games) > 0:
             return {'status': True, 'data': games}
