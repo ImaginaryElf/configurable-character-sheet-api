@@ -23,7 +23,7 @@ class CharacterApi(Resource):
             game = get_game_by_character(args['character_id'])
             if game is not None:
                 for player in game['players']:
-                    for character in game['characters']:
+                    for character in player['characters']:
                         if character['character_id'] == args['character_id']:
                             characters.append(character)
                             return {'status': True, 'data': characters}
