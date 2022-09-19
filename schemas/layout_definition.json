@@ -12,6 +12,7 @@
                 "type": { "type": "string", "enum": ["smallLabel", "mediumLabel", "largeLabel", "titleLabel", "numericInput", "textInput", "tableInput", "boolInput", "listInput"] },
                 "dataField": { "type": "string" },
                 "label": { "type": "string" },
+                "height": { "type": "integer" },
                 "tableHeadings": { "type": "array", "items": {"type": "string"} },
                 "tableMappings": { "type": "object" }
             },
