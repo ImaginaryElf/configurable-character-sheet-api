@@ -34,40 +34,36 @@
                         ]
                     },
                     {
-                        "height": 10,
                         "columns": [
                             {
                                 "width": 3,
                                 "rows": [
                                     {
                                         "control": {
-                                            "type": "nullInput",
+                                            "type": "titleLabel",
                                             "label": "Attributes"
                                         }
                                     },
                                     {
-                                        "height": 3,
                                         "control": {
                                             "type": "numericInput",
                                             "dataField": "attributes.body",
                                             "label": "Body"
-                                        } 
+                                        }
                                     },
                                     {
-                                        "height": 3,
                                         "control": {
                                             "type": "numericInput",
                                             "dataField": "attributes.mind",
                                             "label": "Mind"
-                                        } 
+                                        }
                                     },
                                     {
-                                        "height": 3,
                                         "control": {
                                             "type": "numericInput",
                                             "dataField": "attributes.soul",
                                             "label": "Soul"
-                                        } 
+                                        }
                                     }
                                 ]
                             },
@@ -76,55 +72,39 @@
                                 "rows": [
                                     {
                                         "control": {
-                                            "type": "nullInput",
+                                            "type": "titleLabel",
                                             "label": "Skills"
                                         }
                                     },
                                     {
-                                        "height": 9,
                                         "columns": [
                                             {
-                                                "width": 3,
+                                                "width": 4,
+                                                "collapsable": "true",
                                                 "rows": [
                                                     {
                                                         "columns": [
                                                             {
+                                                                "width": 4,
                                                                 "control": {
-                                                                    "type": "nullInput"
-                                                                }
-                                                            },
-                                                            {
-                                                                "control": {
-                                                                    "type": "nullInput",
-                                                                    "label": "Training"
-                                                                }
-                                                            },
-                                                            {
-                                                                "control": {
-                                                                    "type": "nullInput",
-                                                                    "label": "Focus"
-                                                                }
-                                                            }
-                                                        ]
-                                                    },
-                                                    {
-                                                        "columns": [
-                                                            {
-                                                                "control": {
-                                                                    "type": "nullInput",
+                                                                    "type": "smallLabel",
                                                                     "label": "Arcana"
                                                                 }
                                                             },
                                                             {
+                                                                "width": 4,
                                                                 "control" : {
                                                                     "type": "numericInput",
-                                                                    "dataField": "skills.arcana.training"
+                                                                    "dataField": "skills.arcana.training",
+                                                                    "label": "Training"
                                                                 }
                                                             },
                                                             {
+                                                                "width": 4,
                                                                 "control": {
                                                                     "type": "numericInput",
-                                                                    "dataField": "skills.arcana.focus"
+                                                                    "dataField": "skills.arcana.focus",
+                                                                    "label": "Focus"
                                                                 }
                                                             }
                                                         ]
@@ -132,21 +112,26 @@
                                                     {
                                                         "columns": [
                                                             {
+                                                                "width": 4,
                                                                 "control": {
-                                                                    "type": "nullInput",
+                                                                    "type": "smallLabel",
                                                                     "label": "Athletics"
                                                                 }
                                                             },
                                                             {
+                                                                "width": 4,
                                                                 "control" : {
                                                                     "type": "numericInput",
-                                                                    "dataField": "skills.athletics.training"
+                                                                    "dataField": "skills.athletics.training",
+                                                                    "label": "Training"
                                                                 }
                                                             },
                                                             {
+                                                                "width": 4,
                                                                 "control": {
                                                                     "type": "numericInput",
-                                                                    "dataField": "skills.athletics.focus"
+                                                                    "dataField": "skills.athletics.focus",
+                                                                    "label": "Focus"
                                                                 }
                                                             }
                                                         ]
@@ -154,21 +139,26 @@
                                                     {
                                                         "columns": [
                                                             {
+                                                                "width": 4,
                                                                 "control": {
-                                                                    "type": "nullInput",
+                                                                    "type": "smallLabel",
                                                                     "label": "Awareness"
                                                                 }
                                                             },
                                                             {
+                                                                "width": 4,
                                                                 "control" : {
                                                                     "type": "numericInput",
-                                                                    "dataField": "skills.awareness.training"
+                                                                    "dataField": "skills.awareness.training",
+                                                                    "label": "Training"
                                                                 }
                                                             },
                                                             {
+                                                                "width": 4,
                                                                 "control": {
                                                                     "type": "numericInput",
-                                                                    "dataField": "skills.awareness.focus"
+                                                                    "dataField": "skills.awareness.focus",
+                                                                    "label": "Focus"
                                                                 }
                                                             }
                                                         ]
@@ -176,21 +166,26 @@
                                                     {
                                                         "columns": [
                                                             {
+                                                                "width": 4,
                                                                 "control": {
-                                                                    "type": "nullInput",
+                                                                    "type": "smallLabel",
                                                                     "label": "Ballistic Skill"
                                                                 }
                                                             },
                                                             {
+                                                                "width": 4,
                                                                 "control" : {
                                                                     "type": "numericInput",
-                                                                    "dataField": "skills.ballisticSkill.training"
+                                                                    "dataField": "skills.ballisticSkill.training",
+                                                                    "label" : "Training"
                                                                 }
                                                             },
                                                             {
+                                                                "width": 4,
                                                                 "control": {
                                                                     "type": "numericInput",
-                                                                    "dataField": "skills.ballisticSkill.focus"
+                                                                    "dataField": "skills.ballisticSkill.focus",
+                                                                    "label" : "Focus"
                                                                 }
                                                             }
                                                         ]
@@ -198,21 +193,26 @@
                                                     {
                                                         "columns": [
                                                             {
+                                                                "width": 4,
                                                                 "control": {
-                                                                    "type": "nullInput",
+                                                                    "type": "smallLabel",
                                                                     "label": "Beast Handling"
                                                                 }
                                                             },
                                                             {
+                                                                "width": 4,
                                                                 "control" : {
                                                                     "type": "numericInput",
-                                                                    "dataField": "skills.beastHandling.training"
+                                                                    "dataField": "skills.beastHandling.training",
+                                                                    "label": "Training"
                                                                 }
                                                             },
                                                             {
+                                                                "width": 4,
                                                                 "control": {
                                                                     "type": "numericInput",
-                                                                    "dataField": "skills.beastHandling.focus"
+                                                                    "dataField": "skills.beastHandling.focus",
+                                                                    "label": "Focus"
                                                                 }
                                                             }
                                                         ]
@@ -220,21 +220,26 @@
                                                     {
                                                         "columns": [
                                                             {
+                                                                "width": 4,
                                                                 "control": {
-                                                                    "type": "nullInput",
+                                                                    "type": "smallLabel",
                                                                     "label": "Channelling"
                                                                 }
                                                             },
                                                             {
+                                                                "width": 4,
                                                                 "control" : {
                                                                     "type": "numericInput",
-                                                                    "dataField": "skills.channelling.training"
+                                                                    "dataField": "skills.channelling.training",
+                                                                    "label": "Training"
                                                                 }
                                                             },
                                                             {
+                                                                "width": 4,
                                                                 "control": {
                                                                     "type": "numericInput",
-                                                                    "dataField": "skills.channelling.focus"
+                                                                    "dataField": "skills.channelling.focus",
+                                                                    "label": "Focus"
                                                                 }
                                                             }
                                                         ]
@@ -242,21 +247,26 @@
                                                     {
                                                         "columns": [
                                                             {
+                                                                "width": 4,
                                                                 "control": {
-                                                                    "type": "nullInput",
+                                                                    "type": "smallLabel",
                                                                     "label": "Crafting"
                                                                 }
                                                             },
                                                             {
+                                                                "width": 4,
                                                                 "control" : {
                                                                     "type": "numericInput",
-                                                                    "dataField": "skills.crafting.training"
+                                                                    "dataField": "skills.crafting.training",
+                                                                    "label": "Training"
                                                                 }
                                                             },
                                                             {
+                                                                "width": 4,
                                                                 "control": {
                                                                     "type": "numericInput",
-                                                                    "dataField": "skills.crafting.focus"
+                                                                    "dataField": "skills.crafting.focus",
+                                                                    "label": "Focus"
                                                                 }
                                                             }
                                                         ]
@@ -264,248 +274,58 @@
                                                     {
                                                         "columns": [
                                                             {
+                                                                "width": 4,
                                                                 "control": {
-                                                                    "type": "nullInput",
+                                                                    "type": "smallLabel",
                                                                     "label": "Determination"
                                                                 }
                                                             },
                                                             {
+                                                                "width": 4,
                                                                 "control" : {
                                                                     "type": "numericInput",
-                                                                    "dataField": "skills.determination.training"
+                                                                    "dataField": "skills.determination.training",
+                                                                    "label": "Training"
                                                                 }
                                                             },
                                                             {
+                                                                "width": 4,
                                                                 "control": {
                                                                     "type": "numericInput",
-                                                                    "dataField": "skills.determination.focus"
+                                                                    "dataField": "skills.determination.focus",
+                                                                    "label": "Focus"
                                                                 }
                                                             }
                                                         ]
                                                     }
                                                 ]
-                                            },          
+                                            },
                                             {
-                                                "width": 3,
+                                                "width": 4,
+                                                "collapsable": "true",
                                                 "rows": [
                                                     {
                                                         "columns": [
                                                             {
+                                                                "width": 4,
                                                                 "control": {
-                                                                    "type": "nullInput"
-                                                                }
-                                                            },
-                                                            {
-                                                                "control": {
-                                                                    "type": "nullInput",
-                                                                    "label": "Training"
-                                                                }
-                                                            },
-                                                            {
-                                                                "control": {
-                                                                    "type": "nullInput",
-                                                                    "label": "Focus"
-                                                                }
-                                                            }
-                                                        ]
-                                                    },
-                                                    {
-                                                        "columns": [
-                                                            {
-                                                                "control": {
-                                                                    "type": "nullInput",
+                                                                    "type": "smallLabel",
                                                                     "label": "Devotion"
                                                                 }
                                                             },
                                                             {
+                                                                "width": 4,
                                                                 "control" : {
                                                                     "type": "numericInput",
-                                                                    "dataField": "skills.devotion.training"
-                                                                }
-                                                            },
-                                                            {
-                                                                "control": {
-                                                                    "type": "numericInput",
-                                                                    "dataField": "skills.devotion.focus"
-                                                                }
-                                                            }
-                                                        ]
-                                                    },
-                                                    {
-                                                        "columns": [
-                                                            {
-                                                                "control": {
-                                                                    "type": "nullInput",
-                                                                    "label": "Dexterity"
-                                                                }
-                                                            },
-                                                            {
-                                                                "control" : {
-                                                                    "type": "numericInput",
-                                                                    "dataField": "skills.dexterity.training"
-                                                                }
-                                                            },
-                                                            {
-                                                                "control": {
-                                                                    "type": "numericInput",
-                                                                    "dataField": "skills.dexterity.focus"
-                                                                }
-                                                            }
-                                                        ]
-                                                    },
-                                                    {
-                                                        "columns": [
-                                                            {
-                                                                "control": {
-                                                                    "type": "nullInput",
-                                                                    "label": "Entertain"
-                                                                }
-                                                            },
-                                                            {
-                                                                "control" : {
-                                                                    "type": "numericInput",
-                                                                    "dataField": "skills.entertain.training"
-                                                                }
-                                                            },
-                                                            {
-                                                                "control": {
-                                                                    "type": "numericInput",
-                                                                    "dataField": "skills.entertain.focus"
-                                                                }
-                                                            }
-                                                        ]
-                                                    },
-                                                    {
-                                                        "columns": [
-                                                            {
-                                                                "control": {
-                                                                    "type": "nullInput",
-                                                                    "label": "Fortitude"
-                                                                }
-                                                            },
-                                                            {
-                                                                "control" : {
-                                                                    "type": "numericInput",
-                                                                    "dataField": "skills.fortitude.training"
-                                                                }
-                                                            },
-                                                            {
-                                                                "control": {
-                                                                    "type": "numericInput",
-                                                                    "dataField": "skills.fortitude.focus"
-                                                                }
-                                                            }
-                                                        ]
-                                                    },
-                                                    {
-                                                        "columns": [
-                                                            {
-                                                                "control": {
-                                                                    "type": "nullInput",
-                                                                    "label": "Guile"
-                                                                }
-                                                            },
-                                                            {
-                                                                "control" : {
-                                                                    "type": "numericInput",
-                                                                    "dataField": "skills.guile.training"
-                                                                }
-                                                            },
-                                                            {
-                                                                "control": {
-                                                                    "type": "numericInput",
-                                                                    "dataField": "skills.guile.focus"
-                                                                }
-                                                            }
-                                                        ]
-                                                    },
-                                                    {
-                                                        "columns": [
-                                                            {
-                                                                "control": {
-                                                                    "type": "nullInput",
-                                                                    "label": "Intimidation"
-                                                                }
-                                                            },
-                                                            {
-                                                                "control" : {
-                                                                    "type": "numericInput",
-                                                                    "dataField": "skills.intimidation.training"
-                                                                }
-                                                            },
-                                                            {
-                                                                "control": {
-                                                                    "type": "numericInput",
-                                                                    "dataField": "skills.intimidation.focus"
-                                                                }
-                                                            }
-                                                        ]
-                                                    },
-                                                    {
-                                                        "columns": [
-                                                            {
-                                                                "control": {
-                                                                    "type": "nullInput",
-                                                                    "label": "Intuition"
-                                                                }
-                                                            },
-                                                            {
-                                                                "control" : {
-                                                                    "type": "numericInput",
-                                                                    "dataField": "skills.intuition.training"
-                                                                }
-                                                            },
-                                                            {
-                                                                "control": {
-                                                                    "type": "numericInput",
-                                                                    "dataField": "skills.intuition.focus"
-                                                                }
-                                                            }
-                                                        ]
-                                                    },
-                                                    {
-                                                        "columns": [
-                                                            {
-                                                                "control": {
-                                                                    "type": "nullInput",
-                                                                    "label": "Lore"
-                                                                }
-                                                            },
-                                                            {
-                                                                "control" : {
-                                                                    "type": "numericInput",
-                                                                    "dataField": "skills.lore.training"
-                                                                }
-                                                            },
-                                                            {
-                                                                "control": {
-                                                                    "type": "numericInput",
-                                                                    "dataField": "skills.lore.focus"
-                                                                }
-                                                            }
-                                                        ]
-                                                    }
-                                                ]
-                                            },          
-                                            {
-                                                "width": 3,
-                                                "rows": [
-                                                    {
-                                                        "columns": [
-                                                            {
-                                                                "control": {
-                                                                    "type": "nullInput"
-                                                                }
-                                                            },
-                                                            {
-                                                                "control": {
-                                                                    "type": "nullInput",
+                                                                    "dataField": "skills.devotion.training",
                                                                     "label": "Training"
                                                                 }
                                                             },
                                                             {
+                                                                "width": 4,
                                                                 "control": {
-                                                                    "type": "nullInput",
+                                                                    "type": "numericInput",
+                                                                    "dataField": "skills.devotion.focus",
                                                                     "label": "Focus"
                                                                 }
                                                             }
@@ -514,21 +334,221 @@
                                                     {
                                                         "columns": [
                                                             {
+                                                                "width": 4,
                                                                 "control": {
-                                                                    "type": "nullInput",
+                                                                    "type": "smallLabel",
+                                                                    "label": "Dexterity"
+                                                                }
+                                                            },
+                                                            {
+                                                                "width": 4,
+                                                                "control" : {
+                                                                    "type": "numericInput",
+                                                                    "dataField": "skills.dexterity.training",
+                                                                    "label": "Training"
+                                                                }
+                                                            },
+                                                            {
+                                                                "width": 4,
+                                                                "control": {
+                                                                    "type": "numericInput",
+                                                                    "dataField": "skills.dexterity.focus",
+                                                                    "label": "Focus"
+                                                                }
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "columns": [
+                                                            {
+                                                                "width": 4,
+                                                                "control": {
+                                                                    "type": "smallLabel",
+                                                                    "label": "Entertain"
+                                                                }
+                                                            },
+                                                            {
+                                                                "width": 4,
+                                                                "control" : {
+                                                                    "type": "numericInput",
+                                                                    "dataField": "skills.entertain.training",
+                                                                    "label": "Training"
+                                                                }
+                                                            },
+                                                            {
+                                                                "width": 4,
+                                                                "control": {
+                                                                    "type": "numericInput",
+                                                                    "dataField": "skills.entertain.focus",
+                                                                    "label": "Focus"
+                                                                }
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "columns": [
+                                                            {
+                                                                "width": 4,
+                                                                "control": {
+                                                                    "type": "smallLabel",
+                                                                    "label": "Fortitude"
+                                                                }
+                                                            },
+                                                            {
+                                                                "width": 4,
+                                                                "control" : {
+                                                                    "type": "numericInput",
+                                                                    "dataField": "skills.fortitude.training",
+                                                                    "label": "Training"
+                                                                }
+                                                            },
+                                                            {
+                                                                "width": 4,
+                                                                "control": {
+                                                                    "type": "numericInput",
+                                                                    "dataField": "skills.fortitude.focus",
+                                                                    "label": "Focus"
+                                                                }
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "columns": [
+                                                            {
+                                                                "width": 4,
+                                                                "control": {
+                                                                    "type": "smallLabel",
+                                                                    "label": "Guile"
+                                                                }
+                                                            },
+                                                            {
+                                                                "width": 4,
+                                                                "control" : {
+                                                                    "type": "numericInput",
+                                                                    "dataField": "skills.guile.training",
+                                                                    "label": "Training"
+                                                                }
+                                                            },
+                                                            {
+                                                                "width": 4,
+                                                                "control": {
+                                                                    "type": "numericInput",
+                                                                    "dataField": "skills.guile.focus",
+                                                                    "label": "Focus"
+                                                                }
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "columns": [
+                                                            {
+                                                                "width": 4,
+                                                                "control": {
+                                                                    "type": "smallLabel",
+                                                                    "label": "Intimidation"
+                                                                }
+                                                            },
+                                                            {
+                                                                "width": 4,
+                                                                "control" : {
+                                                                    "type": "numericInput",
+                                                                    "dataField": "skills.intimidation.training",
+                                                                    "label": "Training"
+                                                                }
+                                                            },
+                                                            {
+                                                                "width": 4,
+                                                                "control": {
+                                                                    "type": "numericInput",
+                                                                    "dataField": "skills.intimidation.focus",
+                                                                    "label": "Focus"
+                                                                }
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "columns": [
+                                                            {
+                                                                "width": 4,
+                                                                "control": {
+                                                                    "type": "smallLabel",
+                                                                    "label": "Intuition"
+                                                                }
+                                                            },
+                                                            {
+                                                                "width": 4,
+                                                                "control" : {
+                                                                    "type": "numericInput",
+                                                                    "dataField": "skills.intuition.training",
+                                                                    "label": "Training"
+                                                                }
+                                                            },
+                                                            {
+                                                                "width": 4,
+                                                                "control": {
+                                                                    "type": "numericInput",
+                                                                    "dataField": "skills.intuition.focus",
+                                                                    "label": "Focus"
+                                                                }
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "columns": [
+                                                            {
+                                                                "width": 4,
+                                                                "control": {
+                                                                    "type": "smallLabel",
+                                                                    "label": "Lore"
+                                                                }
+                                                            },
+                                                            {
+                                                                "width": 4,
+                                                                "control" : {
+                                                                    "type": "numericInput",
+                                                                    "dataField": "skills.lore.training",
+                                                                    "label": "Training"
+                                                                }
+                                                            },
+                                                            {
+                                                                "width": 4,
+                                                                "control": {
+                                                                    "type": "numericInput",
+                                                                    "dataField": "skills.lore.focus",
+                                                                    "label": "Focus"
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "width": 4,
+                                                "collapsable": "true",
+                                                "rows": [
+                                                    {
+                                                        "columns": [
+                                                            {
+                                                                "width": 4,
+                                                                "control": {
+                                                                    "type": "smallLabel",
                                                                     "label": "Medicine"
                                                                 }
                                                             },
                                                             {
+                                                                "width": 4,
                                                                 "control" : {
                                                                     "type": "numericInput",
-                                                                    "dataField": "skills.medicine.training"
+                                                                    "dataField": "skills.medicine.training",
+                                                                    "label": "Training"
                                                                 }
                                                             },
                                                             {
+                                                                "width": 4,
                                                                 "control": {
                                                                     "type": "numericInput",
-                                                                    "dataField": "skills.medicine.focus"
+                                                                    "dataField": "skills.medicine.focus",
+                                                                    "label": "Focus"
                                                                 }
                                                             }
                                                         ]
@@ -536,21 +556,26 @@
                                                     {
                                                         "columns": [
                                                             {
+                                                                "width": 4,
                                                                 "control": {
-                                                                    "type": "nullInput",
+                                                                    "type": "smallLabel",
                                                                     "label": "Might"
                                                                 }
                                                             },
                                                             {
+                                                                "width": 4,
                                                                 "control" : {
                                                                     "type": "numericInput",
-                                                                    "dataField": "skills.might.training"
+                                                                    "dataField": "skills.might.training",
+                                                                    "label": "Training"
                                                                 }
                                                             },
                                                             {
+                                                                "width": 4,
                                                                 "control": {
                                                                     "type": "numericInput",
-                                                                    "dataField": "skills.might.focus"
+                                                                    "dataField": "skills.might.focus",
+                                                                    "label": "Focus"
                                                                 }
                                                             }
                                                         ]
@@ -558,21 +583,26 @@
                                                     {
                                                         "columns": [
                                                             {
+                                                                "width": 4,
                                                                 "control": {
-                                                                    "type": "nullInput",
+                                                                    "type": "smallLabel",
                                                                     "label": "Nature"
                                                                 }
                                                             },
                                                             {
+                                                                "width": 4,
                                                                 "control" : {
                                                                     "type": "numericInput",
-                                                                    "dataField": "skills.nature.training"
+                                                                    "dataField": "skills.nature.training",
+                                                                    "label": "Training"
                                                                 }
                                                             },
                                                             {
+                                                                "width": 4,
                                                                 "control": {
                                                                     "type": "numericInput",
-                                                                    "dataField": "skills.nature.focus"
+                                                                    "dataField": "skills.nature.focus",
+                                                                    "label": "Focus"
                                                                 }
                                                             }
                                                         ]
@@ -580,21 +610,26 @@
                                                     {
                                                         "columns": [
                                                             {
+                                                                "width": 4,
                                                                 "control": {
-                                                                    "type": "nullInput",
+                                                                    "type": "smallLabel",
                                                                     "label": "Reflexes"
                                                                 }
                                                             },
                                                             {
+                                                                "width": 4,
                                                                 "control" : {
                                                                     "type": "numericInput",
-                                                                    "dataField": "skills.reflexes.training"
+                                                                    "dataField": "skills.reflexes.training",
+                                                                    "label": "Training"
                                                                 }
                                                             },
                                                             {
+                                                                "width": 4,
                                                                 "control": {
                                                                     "type": "numericInput",
-                                                                    "dataField": "skills.reflexes.focus"
+                                                                    "dataField": "skills.reflexes.focus",
+                                                                    "label": "Focus"
                                                                 }
                                                             }
                                                         ]
@@ -602,21 +637,26 @@
                                                     {
                                                         "columns": [
                                                             {
+                                                                "width": 4,
                                                                 "control": {
-                                                                    "type": "nullInput",
+                                                                    "type": "smallLabel",
                                                                     "label": "Stealth"
                                                                 }
                                                             },
                                                             {
+                                                                "width": 4,
                                                                 "control" : {
                                                                     "type": "numericInput",
-                                                                    "dataField": "skills.stealth.training"
+                                                                    "dataField": "skills.stealth.training",
+                                                                    "label": "Training"
                                                                 }
                                                             },
                                                             {
+                                                                "width": 4,
                                                                 "control": {
                                                                     "type": "numericInput",
-                                                                    "dataField": "skills.stealth.focus"
+                                                                    "dataField": "skills.stealth.focus",
+                                                                    "label": "Focus"
                                                                 }
                                                             }
                                                         ]
@@ -624,21 +664,26 @@
                                                     {
                                                         "columns": [
                                                             {
+                                                                "width": 4,
                                                                 "control": {
-                                                                    "type": "nullInput",
+                                                                    "type": "smallLabel",
                                                                     "label": "Survival"
                                                                 }
                                                             },
                                                             {
+                                                                "width": 4,
                                                                 "control" : {
                                                                     "type": "numericInput",
-                                                                    "dataField": "skills.survival.training"
+                                                                    "dataField": "skills.survival.training",
+                                                                    "label": "Training"
                                                                 }
                                                             },
                                                             {
+                                                                "width": 4,
                                                                 "control": {
                                                                     "type": "numericInput",
-                                                                    "dataField": "skills.survival.focus"
+                                                                    "dataField": "skills.survival.focus",
+                                                                    "label": "Focus"
                                                                 }
                                                             }
                                                         ]
@@ -646,21 +691,26 @@
                                                     {
                                                         "columns": [
                                                             {
+                                                                "width": 4,
                                                                 "control": {
-                                                                    "type": "nullInput",
+                                                                    "type": "smallLabel",
                                                                     "label": "Theology"
                                                                 }
                                                             },
                                                             {
+                                                                "width": 4,
                                                                 "control" : {
                                                                     "type": "numericInput",
-                                                                    "dataField": "skills.theology.training"
+                                                                    "dataField": "skills.theology.training",
+                                                                    "label": "Training"
                                                                 }
                                                             },
                                                             {
+                                                                "width": 4,
                                                                 "control": {
                                                                     "type": "numericInput",
-                                                                    "dataField": "skills.theology.focus"
+                                                                    "dataField": "skills.theology.focus",
+                                                                    "label": "Focus"
                                                                 }
                                                             }
                                                         ]
@@ -668,21 +718,26 @@
                                                     {
                                                         "columns": [
                                                             {
+                                                                "width": 4,
                                                                 "control": {
-                                                                    "type": "nullInput",
+                                                                    "type": "smallLabel",
                                                                     "label": "Weapon Skill"
                                                                 }
                                                             },
                                                             {
+                                                                "width": 4,
                                                                 "control" : {
                                                                     "type": "numericInput",
-                                                                    "dataField": "skills.weaponSkill.training"
+                                                                    "dataField": "skills.weaponSkill.training",
+                                                                    "label": "Training"
                                                                 }
                                                             },
                                                             {
+                                                                "width": 4,
                                                                 "control": {
                                                                     "type": "numericInput",
-                                                                    "dataField": "skills.weaponSkill.focus"
+                                                                    "dataField": "skills.weaponSkill.focus",
+                                                                    "label": "Focus"
                                                                 }
                                                             }
                                                         ]
@@ -691,45 +746,46 @@
                                             }
                                         ]
                                     }
-                                ],
-                                "control": {
-                                    "type": "textInput",
-                                    "dataField": "archetype",
-                                    "label": "Archetype"
-                                }
+                                ]
                             }
                         ]
-                    },
+                    }
+                ]
+            }
+        },
+        {
+            "title": "Combat",
+            "layout":{
+                "rows": [
                     {
-                        "height": 16,
                         "columns": [
                             {
                                 "width": 4,
                                 "rows": [
                                     {
                                         "control": {
-                                            "type": "nullInput",
+                                            "type": "titleLabel",
                                             "label": "Goals"
                                         }
                                     },
                                     {
-                                        "height": 7,
                                         "control": {
                                             "type": "textInput",
-                                            "dataField": "goals"
+                                            "dataField": "goals",
+                                            "height": 50
                                         }
                                     },
                                     {
                                         "control": {
-                                            "type": "nullInput",
+                                            "type": "titleLabel",
                                             "label": "Connections"
                                         }
                                     },
                                     {
-                                        "height": 7,
                                         "control": {
                                             "type": "textInput",
-                                            "dataField": "connections"
+                                            "dataField": "connections",
+                                            "height": 50
                                         }
                                     }
                                 ]
@@ -739,12 +795,11 @@
                                 "rows": [
                                     {
                                         "control": {
-                                            "type": "nullInput",
+                                            "type": "titleLabel",
                                             "label": "Talents"
                                         }
                                     },
                                     {
-                                        "height": 15,
                                         "control": {
                                             "type": "listInput",
                                             "dataField": "talents"
@@ -755,16 +810,14 @@
                         ]
                     },
                     {
-                        "height": 16,
                         "columns": [
                             {
                                 "width": 9,
                                 "rows": [
                                     {
-                                        "height": 2,
                                         "columns": [
                                             {
-                                                "width": 2,
+                                                "width": 3,
                                                 "control": {
                                                     "type": "numericInput",
                                                     "dataField": "melee",
@@ -772,15 +825,15 @@
                                                 }
                                             },
                                             {
-                                                "width": 2,
+                                                "width": 3,
                                                 "control": {
                                                     "type": "numericInput",
                                                     "dataField": "initiative",
-                                                    "label": "Melee"
+                                                    "label": "Initiative"
                                                 }
                                             },
                                             {
-                                                "width": 2,
+                                                "width": 3,
                                                 "control": {
                                                     "type": "numericInput",
                                                     "dataField": "naturalAwareness",
@@ -792,23 +845,23 @@
                                                 "control": {
                                                     "type": "numericInput",
                                                     "dataField": "mettle.current",
-                                                    "label": "Mettle"
+                                                    "label": "Current Mettle"
                                                 }
                                             },
                                             {
                                                 "width": 1,
                                                 "control": {
                                                     "type": "numericInput",
-                                                    "dataField": "mettle.max"
+                                                    "dataField": "mettle.max",
+                                                    "label": "Max Mettle"
                                                 }
                                             }
                                         ]
                                     },
                                     {
-                                        "height": 2,
                                         "columns": [
                                             {
-                                                "width": 2,
+                                                "width": 3,
                                                 "control": {
                                                     "type": "numericInput",
                                                     "dataField": "accuracy",
@@ -816,7 +869,7 @@
                                                 }
                                             },
                                             {
-                                                "width": 2,
+                                                "width": 3,
                                                 "control": {
                                                     "type": "numericInput",
                                                     "dataField": "defense",
@@ -824,7 +877,7 @@
                                                 }
                                             },
                                             {
-                                                "width": 2,
+                                                "width": 3,
                                                 "control": {
                                                     "type": "numericInput",
                                                     "dataField": "armour",
@@ -836,29 +889,29 @@
                                                 "control": {
                                                     "type": "numericInput",
                                                     "dataField": "toughness.current",
-                                                    "label": "Toughness"
+                                                    "label": "Current Toughness"
                                                 }
                                             },
                                             {
                                                 "width": 1,
                                                 "control": {
                                                     "type": "numericInput",
-                                                    "dataField": "toughness.max"
+                                                    "dataField": "toughness.max",
+                                                    "label": "Max Toughness"
                                                 }
                                             }
                                         ]
                                     },
                                     {
                                         "control": {
-                                            "type": "nullInput",
+                                            "type": "titleLabel",
                                             "label": "Attacks"
                                         }
                                     },
                                     {
-                                        "height": 11,
                                         "control": {
                                             "type": "tableInput",
-                                            "datafield": "attacks",
+                                            "dataField": "attacks",
                                             "tableHeadings": [
                                                 "Name",
                                                 "Range",
@@ -875,7 +928,6 @@
                                                 "Damage": "damage",
                                                 "Traits": "traits"
                                             }
-                                            
                                         }
                                     }
                                 ]
@@ -885,21 +937,29 @@
                                 "rows": [
                                     {
                                         "control": {
-                                            "type": "nullInput",
+                                            "type": "titleLabel",
                                             "label": "Wounds"
                                         }
                                     },
                                     {
-                                        "height": 14,
                                         "control": {
                                             "type": "listInput",
-                                            "dataField": "wounds.current"
+                                            "dataField": "wounds.current",
+                                            "label": "Current"
+                                        }
+                                    },
+                                    {
+                                        "control": {
+                                            "type": "numericInput",
+                                            "dataField": "wounds.max",
+                                            "label": "Max"
                                         }
                                     },
                                     {
                                         "control": {
                                             "type": "boolInput",
-                                            "dataField": "wounds.mortallyWounded"
+                                            "dataField": "wounds.mortallyWounded",
+                                            "label": "Mortally Wounded"
                                         }
                                     }
                                 ]
@@ -915,7 +975,7 @@
                 "rows": [
                     {
                         "control": {
-                            "type": "nullInput",
+                            "type": "titleLabel",
                             "label": "Currency"
                         }
                     },
@@ -949,12 +1009,11 @@
                     },
                     {
                         "control": {
-                            "type": "nullInput",
+                            "type": "titleLabel",
                             "label": "Equipment"
                         }
                     },
                     {
-                        "height": 28,
                         "control": {
                             "type": "listInput",
                             "dataField": "equipment"
@@ -969,15 +1028,14 @@
                 "rows": [
                     {
                         "control": {
-                            "type": "nullInput",
+                            "type": "titleLabel",
                             "label": "Spells/Miracles"
                         }
                     },
                     {
-                        "height": 31,
                         "control": {
                             "type": "tableInput",
-                            "datafield": "magics",
+                            "dataField": "magics",
                             "tableHeadings": [
                                 "Name",
                                 "DN/Cost",
@@ -1005,7 +1063,7 @@
                 "rows": [
                     {
                         "control": {
-                            "type": "nullInput",
+                            "type": "titleLabel",
                             "label": "Backstory goes here eventually"
                         }
                     }
