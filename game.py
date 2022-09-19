@@ -1,3 +1,5 @@
+import logging
+
 from flask import request
 from flask_cors import cross_origin
 from flask_restful import Resource
@@ -32,6 +34,7 @@ class Game:
             validate(instance=character, schema=self.json['schema'])
             return True
         except exceptions.ValidationError:
+            logging.exception("Invalid character")
             return False
 
     def validate_layout(self):
@@ -39,6 +42,7 @@ class Game:
             validate(instance=self.json['layout'], schema=self.layout_definition())
             return True
         except exceptions.ValidationError:
+            logging.exception("Invalid layout")
             return False
 
     def validate_schema(self):
@@ -46,6 +50,7 @@ class Game:
             validate(instance=self.json['schema'], schema=self.schema_definition())
             return True
         except exceptions.ValidationError:
+            logging.exception("Invalid schema")
             return False
 
     def schema_definition(self):
