@@ -770,7 +770,7 @@
                                     },
                                     {
                                         "control": {
-                                            "type": "textInput",
+                                            "type": "textareaInput",
                                             "dataField": "goals",
                                             "height": 50
                                         }
@@ -783,7 +783,7 @@
                                     },
                                     {
                                         "control": {
-                                            "type": "textInput",
+                                            "type": "textareaInput",
                                             "dataField": "connections",
                                             "height": 50
                                         }

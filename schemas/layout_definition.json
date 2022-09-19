@@ -9,7 +9,7 @@
         "control": {
             "type": "object",
             "properties": {
-                "type": { "type": "string", "enum": ["smallLabel", "mediumLabel", "largeLabel", "titleLabel", "numericInput", "textInput", "tableInput", "boolInput", "listInput"] },
+                "type": { "type": "string", "enum": ["smallLabel", "mediumLabel", "largeLabel", "titleLabel", "numericInput", "textInput", "textareaInput", "tableInput", "boolInput", "listInput"] },
                 "dataField": { "type": "string" },
                 "label": { "type": "string" },
                 "height": { "type": "integer" },
